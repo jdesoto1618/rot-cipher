@@ -34,6 +34,16 @@ p {
   line-height: 2;
 }
 
+span {
+  font-size: 1.4rem;
+  display: inline-block;
+  margin: 2rem 0;
+}
+
+input {
+  font-size: 1.4rem;
+}
+
 .normal-alphabet {
   padding: 0 2rem;
 }
@@ -42,7 +52,23 @@ p {
   margin-top: 5rem;
 }
 
+.plaintext-container,
+.ciphertext-container {
+  padding: 0 5rem;
+}
 
+.plaintext-word {
+  margin-left: 1rem;
+  border: 0.1rem solid transparent;
+  border-bottom: 0.1rem solid #ccc;
+  transition: border 0.3s linear;
+  width: 25rem;
+  padding: 1rem 2rem;
+}
+
+.ciphertext-word {
+  margin-left: 1rem;
+}
 
 @media screen and (min-width: 64em) {
   h1 {
@@ -56,5 +82,13 @@ p {
   p {
     font-size: 1.75rem;
     letter-spacing: 2.5rem;
+  }
+
+  span {
+    font-size: 1.75rem;
+  }
+
+  input {
+    font-size: 1.75rem;
   }
 }

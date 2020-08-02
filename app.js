@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const standardLetters = generateNormalAlphabet();
   const cipherAlphabet = document.querySelector('.cipher-letters');
   const cipherLetters = generateCipherAlphabet();
+  const plaintextInput = document.querySelector('.plaintext-word');
+  const cipherTextSpan = document.querySelector('.ciphertext-word');
 
   function generateNormalAlphabet() {
     let startIndex = 65;
@@ -31,8 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
     for(j; j < 5; j++) {
       cipherLetters.push(normalLetters[j]);
     }
-
     return cipherLetters;
+  }
+
+  plaintextInput.oninput = () => {
+    cipherTextSpan.innerHTML = plaintextInput.value;
   }
 
   normalAlphabet.innerHTML = standardLetters.join('');
