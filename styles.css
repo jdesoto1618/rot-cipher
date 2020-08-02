@@ -52,6 +52,11 @@ input:focus {
   border-bottom: 0.2rem solid dodgerblue;
 }
 
+.x-cipher {
+  font-size: 2.25rem;
+  margin: 0;
+}
+
 .normal-alphabet {
   padding: 0 2rem;
 }
@@ -75,6 +80,14 @@ input:focus {
   margin-left: 2rem;
 }
 
+.cipher-number label {
+  font-size: 1.4rem;
+}
+
+.cipher-number select {
+  margin-left: 1rem;
+}
+
 @media screen and (min-width: 64em) {
   h1 {
     font-size: 3rem;
@@ -94,6 +107,14 @@ input:focus {
   }
 
   input {
+    font-size: 1.75rem;
+  }
+
+  .x-cipher {
+    font-size: 3rem;
+  }
+
+  .cipher-number label {
     font-size: 1.75rem;
   }
 }

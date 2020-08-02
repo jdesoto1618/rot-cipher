@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const cipherLetters = generateCipherAlphabet();
   const plaintextInput = document.querySelector('.plaintext-word');
   const cipherTextSpan = document.querySelector('.ciphertext-word');
+  let cipherSelector = document.querySelector('.cipher-selection');
+  const cipherSelection = document.querySelector('.x-cipher');
 
   function generateNormalAlphabet() {
     let startIndex = 65;
@@ -20,8 +22,22 @@ document.addEventListener('DOMContentLoaded', () => {
     return letters;
   }
 
+  function generateCipherOptions() {
+    let h = 0;
+    let optionTags;
+    for(h; h <= length; h++) {
+      optionTags = document.createElement('option');
+      optionTags.value = h;
+      optionTags.id = `option ${h}`;
+      optionTags.innerHTML = h;
+      cipherSelector.appendChild(optionTags);
+    }
+  }
+
+  generateCipherOptions();
+
   function generateCipherAlphabet(number) {
-    let i = 5;
+    let i = 1;
     let j = 0;
     let cipherLetters = [];
     let normalLetters = generateNormalAlphabet();
@@ -30,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cipherLetters.push(normalLetters[i]);
     }
 
-    for(j; j < 5; j++) {
+    for(j; j < 1; j++) {
       cipherLetters.push(normalLetters[j]);
     }
     return cipherLetters;
@@ -56,6 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
     cipherTextSpan.innerHTML = plaintextInput.value;
     let length = plaintextInput.value.length;
   }
+
+  cipherSelector.addEventListener('change', () => {
+    cipherSelection.innerHTML = cipherSelector.value;
+  });
 
   normalAlphabet.innerHTML = standardLetters.join('');
   cipherAlphabet.innerHTML = cipherLetters.join('');
