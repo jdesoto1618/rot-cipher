@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const cipherTextSpan = document.querySelector('.ciphertext-word');
   let cipherSelector = document.querySelector('.cipher-selection');
   const cipherSelection = document.querySelector('.x-cipher');
+  let selectedCipher;
 
   function generateNormalAlphabet() {
     let startIndex = 65;
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   generateCipherOptions();
 
   function generateCipherAlphabet(number) {
-    let i = 1;
+    let i = number;
     let j = 0;
     let cipherLetters = [];
     let normalLetters = generateNormalAlphabet();
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cipherLetters.push(normalLetters[i]);
     }
 
-    for(j; j < 1; j++) {
+    for(j; j < number; j++) {
       cipherLetters.push(normalLetters[j]);
     }
     return cipherLetters;
@@ -58,13 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let cipherText = [];
     let splitWord = text.toUpperCase().split('');
     let splitWordLength = splitWord.length;
-    let shiftedLetters = generateCipherAlphabet();
+    let shiftedLetters = generateCipherAlphabet(26);
 
     for(k = 0; k < splitWordLength; k++) {
       letterIndices.push(standardLetters.indexOf(splitWord[k]));
       cipherText.push(shiftedLetters[letterIndices[k]]);
     }
-
     return cipherText.join('');
   }
 
@@ -75,10 +75,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   cipherSelector.addEventListener('change', () => {
     cipherSelection.innerHTML = cipherSelector.value;
+    selectedCipher = cipherSelector.value;
+    let selectedCipherToNumber = parseInt(selectedCipher, 10);
+    generateCipherAlphabet(selectedCipherToNumber);
+    cipherAlphabet.innerHTML = cipherLetters.join('');
   });
 
   normalAlphabet.innerHTML = standardLetters.join('');
-  cipherAlphabet.innerHTML = cipherLetters.join('');
+  
 
   console.log(generateCipherText('test me'));
 });
