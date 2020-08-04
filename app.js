@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   normalAlphabet.innerHTML = standardLetters.join('');
-  
+  cipherAlphabet.innerHTML = standardLetters.join('');
 
   console.log(generateCipherText('test me'));
 });
