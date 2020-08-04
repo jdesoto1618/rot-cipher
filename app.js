@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const standardLetters = generateNormalAlphabet();
   const length = standardLetters.length;
   const cipherAlphabet = document.querySelector('.cipher-letters');
-  const cipherLetters = generateCipherAlphabet();
+  // const cipherLetters = generateCipherAlphabet();
   const plaintextInput = document.querySelector('.plaintext-word');
   const cipherTextSpan = document.querySelector('.ciphertext-word');
   let cipherSelector = document.querySelector('.cipher-selection');
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cipherSelection.innerHTML = cipherSelector.value;
     selectedCipher = cipherSelector.value;
     let selectedCipherToNumber = parseInt(selectedCipher, 10);
-    generateCipherAlphabet(selectedCipherToNumber);
+    let cipherLetters = generateCipherAlphabet(selectedCipherToNumber);
     cipherAlphabet.innerHTML = cipherLetters.join('');
   });
 
