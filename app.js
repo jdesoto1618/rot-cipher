@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   plaintextInput.oninput = () => {
-    plaintextInput.value.toUpperCase();
     selectedCipher = cipherSelector.value;
     let selectedCipherToNumber = parseInt(selectedCipher, 10);
     cipherTextSpan.innerHTML = generateCipherText(plaintextInput.value, selectedCipherToNumber);
