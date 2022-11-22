@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="main">
+    <main class="main">
       <div class="page-title-container">
         <h1 class="page-title text-center">
           Rot <span class="x-cipher">0</span> Cipher
@@ -33,16 +33,18 @@
         <select class="cipher-selection"></select>
       </div>
 
-      <div class="plaintext-container">
-        <span class="plaintext">Plaintext:</span>
-        <input type="text" class="plaintext-word" value="" />
-      </div>
+      <div class="text-input-output-wrapper">
+        <div class="text-container plaintext-container">
+          <h4 class="text-title plaintext-title text-center">Plaintext:</h4>
+          <input type="text" class="plaintext-word" value="" />
+        </div>
 
-      <div class="ciphertext-container">
-        <span class="ciphertext">Ciphertext:</span>
-        <span class="ciphertext-word"></span>
+        <div class="text-container ciphertext-container">
+          <h4 class="text-title ciphertext-title text-center">Ciphertext:</h4>
+          <span class="ciphertext-word"></span>
+        </div>
       </div>
-    </div>
+    </main>
     <script src="app.js"></script>
   </body>
 </html>

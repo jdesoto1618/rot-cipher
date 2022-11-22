@@ -1,3 +1,8 @@
+:root {
+  --card-border-radius: 1rem;
+  --card-box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+}
+
 html, body {
   box-sizing: border-box;
   margin: 0;
@@ -10,6 +15,11 @@ html, body {
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+.main {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .text-center {
@@ -36,8 +46,6 @@ p {
 
 span {
   font-size: 1.4rem;
-  display: inline-block;
-  margin: 2rem 0;
 }
 
 .page-title-container {
@@ -50,25 +58,38 @@ span {
   padding-bottom: 2rem;
 }
 
-.plaintext-container,
-.ciphertext-container {
-  padding: 0 5rem;
+.text-input-output-wrapper {
+  margin-top: 4rem;
+  padding: 2rem;
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-box-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-title {
+  font-size: 1.8rem;
+  margin-top: 0;
 }
 
 .plaintext-word {
   font-size: 1.4rem;
-  margin-left: 2.5rem;
   border: transparent;
-  width: 25rem;
   padding: 1rem;
   text-transform: uppercase;
   border-bottom: 0.2rem solid #ccc;
   outline: 0.1rem solid transparent;
-  transition: border 0.3s ease;
+  transition: border-color 0.3s ease;
 }
 
 .plaintext-word:focus {
-  border-bottom: 0.2rem solid dodgerblue;
+  border-color: dodgerblue;
 }
 
 .x-cipher {
@@ -85,7 +106,7 @@ span {
 }
 
 .ciphertext-word {
-  margin-left: 2rem;
+  min-height: 3.8rem;
 }
 
 .cipher-number label {
