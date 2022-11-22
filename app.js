@@ -23,11 +23,11 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   function generateCipherOptions() {
-    let h = 1;
+    let h = 0;
     let optionTags;
     for (h; h <= length; h++) {
       optionTags = document.createElement("option");
-      if (h == 1) {
+      if (h == 0) {
         optionTags.innerHTML = "Choose a Cipher";
         optionTags.setAttribute("disabled", "true");
         optionTags.setAttribute("selected", "true");
