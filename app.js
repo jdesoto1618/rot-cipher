@@ -1,12 +1,12 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const normalAlphabet = document.querySelector('.normal-letters');
+window.addEventListener("DOMContentLoaded", () => {
+  const normalAlphabet = document.querySelector(".normal-letters");
   const standardLetters = generateNormalAlphabet();
   const length = standardLetters.length;
-  const cipherAlphabet = document.querySelector('.cipher-letters');
-  const plaintextInput = document.querySelector('.plaintext-word');
-  const cipherTextSpan = document.querySelector('.ciphertext-word');
-  let cipherSelector = document.querySelector('.cipher-selection');
-  const cipherSelection = document.querySelector('.x-cipher-selection');
+  const cipherAlphabet = document.querySelector(".cipher-letters");
+  const plaintextInput = document.querySelector(".plaintext-word");
+  const cipherTextSpan = document.querySelector(".ciphertext-word");
+  let cipherSelector = document.querySelector(".cipher-selection");
+  const cipherSelection = document.querySelector(".x-cipher-selection");
   let selectedCipher;
 
   function generateNormalAlphabet() {
@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const lettersAtoZ = 25;
     const endIndex = startIndex + lettersAtoZ;
     let letters = [];
-    
-    for(startIndex; startIndex <= endIndex; startIndex++) {
+
+    for (startIndex; startIndex <= endIndex; startIndex++) {
       letters.push(String.fromCharCode(startIndex));
     }
 
@@ -23,13 +23,20 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function generateCipherOptions() {
-    let h = 0;
+    let h = 1;
     let optionTags;
-    for(h; h <= length; h++) {
-      optionTags = document.createElement('option');
-      optionTags.value = h;
-      optionTags.id = `option ${h}`;
-      optionTags.innerHTML = h;
+    for (h; h <= length; h++) {
+      optionTags = document.createElement("option");
+      if (h == 1) {
+        optionTags.innerHTML = "Choose a Cipher";
+        optionTags.setAttribute("disabled", "true");
+        optionTags.setAttribute("selected", "true");
+        console.log(optionTags);
+      } else {
+        optionTags.value = h;
+        optionTags.id = `option ${h}`;
+        optionTags.innerHTML = `Rot ${h}`;
+      }
       cipherSelector.appendChild(optionTags);
     }
   }
@@ -42,11 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let cipherLetters = [];
     let normalLetters = generateNormalAlphabet();
 
-    for(i; i < length; i++) {
+    for (i; i < length; i++) {
       cipherLetters.push(normalLetters[i]);
     }
 
-    for(j; j < number; j++) {
+    for (j; j < number; j++) {
       cipherLetters.push(normalLetters[j]);
     }
     return cipherLetters;
@@ -56,32 +63,38 @@ document.addEventListener('DOMContentLoaded', () => {
     let k;
     let letterIndices = [];
     let cipherText = [];
-    let splitWord = text.toUpperCase().split('');
+    let splitWord = text.toUpperCase().split("");
     let splitWordLength = splitWord.length;
     let shiftedLetters = generateCipherAlphabet(number);
 
-    for(k = 0; k < splitWordLength; k++) {
+    for (k = 0; k < splitWordLength; k++) {
       letterIndices.push(standardLetters.indexOf(splitWord[k]));
       cipherText.push(shiftedLetters[letterIndices[k]]);
     }
-    return cipherText.join('');
+    return cipherText.join("");
   }
+
+  plaintextInput.setAttribute("disabled", "true");
 
   plaintextInput.oninput = () => {
     selectedCipher = cipherSelector.value;
     let selectedCipherToNumber = parseInt(selectedCipher, 10);
-    cipherTextSpan.innerHTML = generateCipherText(plaintextInput.value, selectedCipherToNumber);
-  }
+    cipherTextSpan.innerHTML = generateCipherText(
+      plaintextInput.value,
+      selectedCipherToNumber
+    );
+  };
 
-  cipherSelector.addEventListener('change', () => {
+  cipherSelector.addEventListener("change", () => {
+    plaintextInput.removeAttribute("disabled");
     cipherSelection.innerHTML = cipherSelector.value;
-    cipherSelection.classList.add('active');
+    cipherSelection.classList.add("active");
     selectedCipher = cipherSelector.value;
     let selectedCipherToNumber = parseInt(selectedCipher, 10);
     let cipherLetters = generateCipherAlphabet(selectedCipherToNumber);
-    cipherAlphabet.innerHTML = cipherLetters.join('');
+    cipherAlphabet.innerHTML = cipherLetters.join("");
   });
 
-  normalAlphabet.innerHTML = standardLetters.join('');
-  cipherAlphabet.innerHTML = standardLetters.join('');
+  normalAlphabet.innerHTML = standardLetters.join("");
+  cipherAlphabet.innerHTML = standardLetters.join("");
 });
