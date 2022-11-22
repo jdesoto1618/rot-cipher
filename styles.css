@@ -2,7 +2,7 @@
   --card-border-radius: 1rem;
   --card-box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
   --blue-border-color: #41a3ff;
-  --rot-selection-color: #90f3c3;
+  --rot-selection-color: #468499;
   --light-gray: #ccc;
   --text-xl: 2.25rem;
   --text-lg: 2rem;
@@ -64,9 +64,13 @@ span {
   padding-bottom: 2rem;
 }
 
+.alphabet-wrapper {
+  margin-bottom: 6rem;
+}
+
 .cipher-selection-container {
   font-size: var(--text-md);
-  margin: 4rem 0;
+  margin-bottom: 4rem;
   display: flex;
   justify-content: center;
   gap: 2.4rem;
@@ -117,10 +121,6 @@ span {
   color: var(--rot-selection-color);
 }
 
-.normal-alphabet {
-  padding: 0 2rem;
-}
-
 .ciphered-alphabet {
   margin-top: 5rem;
 }
@@ -162,6 +162,10 @@ span {
 
   .main {
     max-width: 95rem;
+  }
+
+  .alphabet-wrapper {
+    margin-bottom: 8rem;
   }
 
   .text-input-output-wrapper {
