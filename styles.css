@@ -3,6 +3,7 @@
   --card-box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
   --blue-border-color: #41a3ff;
   --rot-selection-color: #90f3c3;
+  --light-gray: #ccc;
 }
 
 html, body {
@@ -61,14 +62,13 @@ span {
 }
 
 .cipher-selection-container {
-  margin-top: 3rem;
+  margin: 4rem 0;
   display: flex;
   justify-content: center;
   gap: 2.4rem;
 }
 
 .text-input-output-wrapper {
-  margin-top: 4rem;
   padding: 2rem;
   border-radius: var(--card-border-radius);
   box-shadow: var(--card-box-shadow);
@@ -93,7 +93,7 @@ span {
   border: transparent;
   padding: 1rem;
   text-transform: uppercase;
-  border-bottom: 0.2rem solid #ccc;
+  border-bottom: 0.2rem solid var(--light-gray);
   outline: 0.1rem solid transparent;
   transition: border-color 0.3s ease;
 }
@@ -123,6 +123,12 @@ span {
 
 .ciphertext-word {
   min-height: 3.8rem;
+  border-bottom: 0.2rem solid var(--light-gray);
+  transition: border-color 0.2s ease;
+}
+
+.ciphertext-word.encoded {
+  border-color: #ff7373;
 }
 
 @media (min-width: 36em) {
@@ -170,9 +176,10 @@ span {
   }
 
   .text-input-output-wrapper {
-    grid-template-columns: repeat(2, 1fr);
     padding: 4.5rem;
     gap: 4.8rem;
+    max-width: 75rem;
+    margin: 0 auto;
   }
 
   .x-cipher-selection {
