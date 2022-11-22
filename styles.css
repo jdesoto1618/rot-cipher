@@ -1,6 +1,7 @@
 :root {
   --card-border-radius: 1rem;
   --card-box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+  --blue-border-color: #41a3ff;
 }
 
 html, body {
@@ -58,6 +59,13 @@ span {
   padding-bottom: 2rem;
 }
 
+.cipher-selection-container {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 2.4rem;
+}
+
 .text-input-output-wrapper {
   margin-top: 4rem;
   padding: 2rem;
@@ -66,6 +74,7 @@ span {
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+  border: 0.1rem solid var(--blue-border-color);
 }
 
 .text-container {
@@ -109,14 +118,6 @@ span {
   min-height: 3.8rem;
 }
 
-.cipher-number label {
-  font-size: 1.4rem;
-}
-
-.cipher-number select {
-  margin-left: 1rem;
-}
-
 @media (min-width: 36em) {
   .main {
     max-width: 54rem;
@@ -128,6 +129,10 @@ span {
 @media (min-width: 48em) {
   .main {
     max-width: 65rem;
+  }
+
+  .text-input-output-wrapper {
+    padding: 3.5rem;
   }
 }
 
@@ -157,11 +162,15 @@ span {
     font-size: 1.75rem;
   }
 
+  .text-input-output-wrapper {
+    padding: 4.5rem;
+  }
+
   .x-cipher {
     font-size: 3rem;
   }
 
-  .cipher-number label {
+  .cipher-selection-container {
     font-size: 1.75rem;
   }
 }
