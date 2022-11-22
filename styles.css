@@ -40,15 +40,34 @@ span {
   margin: 2rem 0;
 }
 
-input {
-  font-size: 1.4rem;
-  border: transparent;
-  border-bottom: 0.1rem solid #ccc;
-  outline: 0.1rem solid transparent;
-  transition: border 0.5s linear;
+.page-title-container {
+  padding: 2rem;
+  margin-bottom: 4rem;
 }
 
-input:focus {
+.page-title {
+  margin: 0;
+  padding-bottom: 2rem;
+}
+
+.plaintext-container,
+.ciphertext-container {
+  padding: 0 5rem;
+}
+
+.plaintext-word {
+  font-size: 1.4rem;
+  margin-left: 2.5rem;
+  border: transparent;
+  width: 25rem;
+  padding: 1rem;
+  text-transform: uppercase;
+  border-bottom: 0.2rem solid #ccc;
+  outline: 0.1rem solid transparent;
+  transition: border 0.3s ease;
+}
+
+.plaintext-word:focus {
   border-bottom: 0.2rem solid dodgerblue;
 }
 
@@ -65,18 +84,6 @@ input:focus {
   margin-top: 5rem;
 }
 
-.plaintext-container,
-.ciphertext-container {
-  padding: 0 5rem;
-}
-
-.plaintext-word {
-  margin-left: 2.5rem;
-  width: 25rem;
-  padding: 1rem;
-  text-transform: uppercase;
-}
-
 .ciphertext-word {
   margin-left: 2rem;
 }
@@ -89,7 +96,7 @@ input:focus {
   margin-left: 1rem;
 }
 
-@media screen and (min-width: 64em) {
+@media (min-width: 64em) {
   h1 {
     font-size: 3rem;
   }
