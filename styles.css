@@ -6,6 +6,7 @@
   --blue-border-color: #41a3ff;
   --rot-selection-color: #468499;
   --select-background-color: #16a085;
+  --input-output-card-backgroud: linear-gradient(rgb(56, 189, 149), rgb(28, 139, 106));
   --light-gray: #ccc;
   --text-xl: clamp(2.25rem, -0.6493rem + 5.0336vw, 4.5rem);
   --text-lg: 2rem;
@@ -99,8 +100,17 @@ span {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3.2rem;
-  border: 0.1rem solid var(--blue-border-color);
   overflow: scroll;
+  position: relative;
+}
+
+.text-input-output-wrapper::before  {
+  content: '';
+  position: absolute;
+  inset: -0.3rem;
+  background: var(--input-output-card-backgroud);
+  border-radius: var(--card-border-radius);
+  z-index: -1;
 }
 
 .text-container {
@@ -111,6 +121,7 @@ span {
 .text-title {
   font-size: 1.8rem;
   margin-top: 0;
+  color: var(--white);
 }
 
 .plaintext-word {
@@ -150,7 +161,7 @@ span {
 }
 
 .ciphertext-word.encoded {
-  color: #ff7373;
+  color: #46ffda;
 }
 
 @media (min-width: 36em) {
