@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
   const normalAlphabet = document.querySelector(".normal-letters");
   const standardLetters = generateNormalAlphabet();
-  const length = standardLetters.length;
+  const standardLetterseLength = standardLetters.length;
   const cipherAlphabet = document.querySelector(".cipher-letters");
   const plaintextInput = document.querySelector(".plaintext-word");
   const cipherTextSpan = document.querySelector(".ciphertext-word");
@@ -25,19 +25,18 @@ window.addEventListener("DOMContentLoaded", () => {
   function generateCipherOptions() {
     let h = 0;
     let optionTags;
-    for (h; h <= length; h++) {
+    for (h; h <= standardLetterseLength; h++) {
       optionTags = document.createElement("option");
       if (h == 0) {
         optionTags.innerHTML = "Choose a Cipher";
         optionTags.setAttribute("disabled", "true");
         optionTags.setAttribute("selected", "true");
-        console.log(optionTags);
       } else {
         optionTags.value = h;
         optionTags.id = `option ${h}`;
         optionTags.innerHTML = `Rot ${h}`;
       }
-      cipherSelector.appendChild(optionTags);
+      cipherSelector.append(optionTags);
     }
   }
 
@@ -49,7 +48,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let cipherLetters = [];
     let normalLetters = generateNormalAlphabet();
 
-    for (i; i < length; i++) {
+    for (i; i < standardLetterseLength; i++) {
       cipherLetters.push(normalLetters[i]);
     }
 
