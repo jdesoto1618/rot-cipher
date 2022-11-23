@@ -2,6 +2,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const normalAlphabet = document.querySelector(".normal-letters");
   const standardLetters = generateNormalAlphabet();
   const standardLetterseLength = standardLetters.length;
+  const ciphertextContainer = document.querySelector(".ciphertext-container");
   const cipherAlphabet = document.querySelector(".cipher-letters");
   const plaintextInput = document.querySelector(".plaintext-word");
   const cipherTextSpan = document.querySelector(".ciphertext-word");
@@ -93,6 +94,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let selectedCipherToNumber = parseInt(selectedCipher, 10);
     let cipherLetters = generateCipherAlphabet(selectedCipherToNumber);
     cipherAlphabet.innerHTML = cipherLetters.join("");
+    ciphertextContainer.classList.add("shown");
   });
 
   normalAlphabet.innerHTML = standardLetters.join("");
