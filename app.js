@@ -83,6 +83,7 @@ window.addEventListener("DOMContentLoaded", () => {
       plaintextInput.value,
       selectedCipherToNumber
     );
+    cipherTextSpan.classList.add("encoded");
   };
 
   cipherSelector.addEventListener("change", () => {

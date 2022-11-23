@@ -129,10 +129,11 @@ span {
   min-height: 3.8rem;
   border-bottom: 0.2rem solid var(--light-gray);
   transition: border-color 0.2s ease;
+  letter-spacing: 0.1rem;
 }
 
 .ciphertext-word.encoded {
-  border-color: #ff7373;
+  color: #ff7373;
 }
 
 @media (min-width: 36em) {
