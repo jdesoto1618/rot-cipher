@@ -3,6 +3,7 @@
   --card-box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
   --white: #fff;
   --black: #000;
+  --near-black: #222;
   --blue-border-color: #41a3ff;
   --rot-selection-color: #468499;
   --select-background-color: #16a085;
@@ -125,17 +126,24 @@ span {
 }
 
 .plaintext-word {
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: var(--text-md);
   border: transparent;
   padding: 1rem;
   text-transform: uppercase;
-  border-bottom: 0.2rem solid var(--light-gray);
+  border-bottom: 0.2rem solid var(--near-black);
+  border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
   outline: 0.1rem solid transparent;
-  transition: border-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  background-color: var(--white);
+}
+
+.plaintext-word:disabled {
+  background-color: transparent;
 }
 
 .plaintext-word:focus {
-  border-color: dodgerblue;
+  border-color: var(--near-black);
 }
 
 .x-cipher-selection {
@@ -155,7 +163,7 @@ span {
 
 .ciphertext-word {
   min-height: 3.8rem;
-  border-bottom: 0.2rem solid var(--light-gray);
+  border-bottom: 0.2rem solid var(--near-black);
   transition: border-color 0.2s ease;
   letter-spacing: 0.1rem;
 }
