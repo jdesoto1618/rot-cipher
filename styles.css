@@ -1,8 +1,11 @@
 :root {
   --card-border-radius: 1rem;
   --card-box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+  --white: #fff;
+  --black: #000;
   --blue-border-color: #41a3ff;
   --rot-selection-color: #468499;
+  --select-background-color: #16a085;
   --light-gray: #ccc;
   --text-xl: 2.25rem;
   --text-lg: 2rem;
@@ -73,8 +76,20 @@ span {
   font-size: var(--text-md);
   margin-bottom: 4rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   gap: 2.4rem;
+}
+
+.cipher-selection {
+  font-weight: 600;
+  margin: 0 auto;
+  padding: 0.75rem;
+  border-radius: 0.2rem;
+  outline: none;
+  color: var(--white);
+  background-color: var(--select-background-color);
+  border: none;
 }
 
 .text-input-output-wrapper {
@@ -144,6 +159,14 @@ span {
     margin: 0 auto;
     padding: 0;
   }
+
+  .cipher-selection-container {
+    flex-direction: row;
+  }
+
+  .cipher-selection {
+    margin: 0;
+  }
 }
 
 @media (min-width: 48em) {
@@ -176,6 +199,11 @@ span {
     gap: 4.8rem;
     max-width: 75rem;
     margin: 0 auto;
+  }
+
+  .cipher-selection-container {
+    max-width: 75rem;
+    margin: 0 auto 4rem;
   }
 }
 
