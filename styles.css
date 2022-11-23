@@ -7,7 +7,7 @@
   --rot-selection-color: #468499;
   --select-background-color: #16a085;
   --light-gray: #ccc;
-  --text-xl: 2.25rem;
+  --text-xl: clamp(2.25rem, -0.6493rem + 5.0336vw, 4.5rem);
   --text-lg: 2rem;
   --text-md: 1.4rem;
 }
@@ -181,7 +181,6 @@ span {
 
 @media (min-width: 64em) {
   :root {
-    --text-xl: 3rem;
     --text-lg: 2.25rem;
     --text-md: 1.75rem;
   }
