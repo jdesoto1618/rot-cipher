@@ -12,13 +12,13 @@
   --text-xl: clamp(2.25rem, -0.6493rem + 5.0336vw, 4.5rem);
   --text-lg: 2rem;
   --text-md: 1.4rem;
+  --transition-speed: var(--transition-speed);
 }
 
 html, body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 62.5%;
   font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -29,13 +29,9 @@ html, body {
 }
 
 .main {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  width: min(100% - 2rem, 80rem);
+  margin-inline: auto;
   overflow: hidden;
-}
-
-.text-center {
-  text-align: center;
 }
 
 h1 {
@@ -58,6 +54,10 @@ p {
 
 span {
   font-size: var(--text-md);
+}
+
+.text-center {
+  text-align: center;
 }
 
 .page-title-container {
@@ -101,7 +101,6 @@ span {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3.2rem;
-  overflow: scroll;
   position: relative;
 }
 
@@ -123,7 +122,9 @@ span {
   visibility: hidden;
   transform: scaleY(0);
   transform-origin: top;
-  transition: visbility 0.3s ease, transform 0.3s ease;
+  transition: 
+    visbility var(--transition-speed) ease, 
+    transform var(--transition-speed) ease;
 }
 
 .ciphertext-container.shown {
@@ -146,7 +147,7 @@ span {
   border-bottom: 0.2rem solid var(--near-black);
   border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
   outline: 0.1rem solid transparent;
-  transition: background-color 0.3s ease;
+  transition: background-color var(--transition-speed) ease;
   background-color: var(--white);
 }
 
@@ -185,12 +186,6 @@ span {
 }
 
 @media (min-width: 36em) {
-  .main {
-    max-width: 54rem;
-    margin: 0 auto;
-    padding: 0;
-  }
-
   .cipher-selection-container {
     flex-direction: row;
   }
@@ -201,10 +196,6 @@ span {
 }
 
 @media (min-width: 48em) {
-  .main {
-    max-width: 65rem;
-  }
-
   .text-input-output-wrapper {
     padding: 3.5rem;
   }
@@ -214,10 +205,6 @@ span {
   :root {
     --text-lg: 2.25rem;
     --text-md: 1.75rem;
-  }
-
-  .main {
-    max-width: 95rem;
   }
 
   .alphabet-wrapper {
@@ -238,10 +225,6 @@ span {
 }
 
 @media (min-width: 75em) {
-  .main {
-    max-width: 117rem;
-  }
-
   .text-input-output-wrapper {
     gap: 6.4rem;
   }
