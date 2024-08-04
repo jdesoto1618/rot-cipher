@@ -4,10 +4,11 @@ window.addEventListener("DOMContentLoaded", () => {
   const standardLetterseLength = standardLetters.length;
   const ciphertextContainer = document.querySelector(".ciphertext-container");
   const cipherAlphabet = document.querySelector(".cipher-letters");
+  const cipheredAlphabet = document.querySelector('.ciphered-alphabet');
   const plaintextInput = document.querySelector(".plaintext-word");
   const cipherTextSpan = document.querySelector(".ciphertext-word");
   let cipherSelector = document.querySelector(".cipher-selection");
-  const cipherSelection = document.querySelector(".x-cipher-selection");
+  const cipherSelection = document.querySelector('.cipher-selection-value');
   let selectedCipher;
 
   function generateNormalAlphabet() {
@@ -89,6 +90,7 @@ window.addEventListener("DOMContentLoaded", () => {
   cipherSelector.addEventListener("change", () => {
     plaintextInput.removeAttribute("disabled");
     cipherSelection.innerHTML = cipherSelector.value;
+    cipheredAlphabet.innerHTML = `${cipherSelector.value}-`;
     cipherSelection.classList.add("active");
     selectedCipher = cipherSelector.value;
     let selectedCipherToNumber = parseInt(selectedCipher, 10);

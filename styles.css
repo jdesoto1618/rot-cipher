@@ -192,19 +192,25 @@ span {
   border-color: var(--near-black);
 }
 
-.x-cipher-selection {
+.cipher-selection-value {
   font-size: var(--text-xl);
   margin: 0;
   transition: color 0.2s ease;
   color: currentColor;
 }
 
-.x-cipher-selection.active {
-  color: var(--rot-selection-color);
+.cipher-selection-value {
+  &.active {
+    color: var(--rot-selection-color);
+  }
+
+  &.ciphered-alphabet {
+    font-size: var(--text-lg);
+  }
 }
 
-.ciphered-alphabet {
-  margin-top: 5rem;
+.ciphered-alphabet-wrapper {
+  margin-block-start: 4rem;
 }
 
 .ciphertext-word {
