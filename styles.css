@@ -11,7 +11,7 @@
   --light-gray: #ccc;
   --text-xl: clamp(2.5rem, 1.982rem + 2.21vw, 3.75rem);
   --text-lg: 2rem;
-  --text-md: 1.4rem;
+  --text-md: 1.25rem;
   --transition-speed: var(--transition-speed);
 }
 
@@ -90,12 +90,12 @@ span {
 }
 
 .alphabet-wrapper {
-  margin-bottom: 6rem;
+  margin-block-end: clamp(2rem, 1.171rem + 3.536vw, 4rem);
 }
 
 .cipher-selection-container {
   font-size: var(--text-md);
-  margin-bottom: 4rem;
+  margin-block-end: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -221,6 +221,7 @@ span {
 @media (min-width: 48rem) {
   .cipher-selection-container {
     flex-direction: row;
+    align-items: center;
   }
 
   .cipher-select-wrapper {
@@ -231,11 +232,6 @@ span {
 @media (min-width: 64em) {
   :root {
     --text-lg: 2.25rem;
-    --text-md: 1.75rem;
-  }
-
-  .alphabet-wrapper {
-    margin-bottom: 8rem;
   }
 
   .text-input-output-wrapper {
