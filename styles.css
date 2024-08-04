@@ -43,7 +43,7 @@ h1 {
 
 h3 {
   font-size: var(--text-lg);
-  margin-bottom: 0;
+  margin-block: 0;
 }
 
 p {
@@ -89,8 +89,15 @@ span {
   padding-block-end: 2rem;
 }
 
+.container {
+  width: min(100%, 60rem);
+  margin-inline: auto;
+}
+
 .alphabet-wrapper {
   margin-block-end: clamp(2rem, 1.171rem + 3.536vw, 4rem);
+  flex-direction: column;
+  gap: 3rem;
 }
 
 .cipher-selection-container {
@@ -207,10 +214,6 @@ span {
   &.ciphered-alphabet {
     font-size: var(--text-lg);
   }
-}
-
-.ciphered-alphabet-wrapper {
-  margin-block-start: 4rem;
 }
 
 .ciphertext-word {
