@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const cipherTextSpan = document.querySelector(".ciphertext-word");
   let cipherSelector = document.querySelector(".cipher-selection");
   const cipherSelection = document.querySelector('.cipher-selection-value');
+  const textInputOutputWrapper = document.querySelector('.text-input-output-wrapper');
   let selectedCipher;
 
   function generateCipherOptions() {
@@ -103,6 +104,7 @@ window.addEventListener("DOMContentLoaded", () => {
       cipherAlphabetContainer.append(cipherLetter);
     });
     ciphertextContainer.classList.add("shown");
+    textInputOutputWrapper.append(ciphertextContainer);
   });
 
   letterContainers.forEach(container => {
@@ -110,4 +112,6 @@ window.addEventListener("DOMContentLoaded", () => {
       container.append(letterSpan.cloneNode(true));
     });
   });
+
+  ciphertextContainer.remove();
 });

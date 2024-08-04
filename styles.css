@@ -150,56 +150,56 @@ span {
   gap: 3.2rem;
   isolation: isolate;
 
-  &::before {
+  &::before,
+  &::after {
     content: '';
     position: absolute;
+    border-radius: inherit;
+  }
+
+  &::before {
     inset: 0;
     background: var(--input-output-card-backgroud);
-    border-radius: inherit;
     z-index: -1;
+  }
+
+  &::after {
+    inset: 2px;
+    background: var(--white);
   }
 }
 
 .text-container {
   display: flex;
   flex-direction: column;
-}
-
-.ciphertext-container {
-  visibility: hidden;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: 
-    visbility var(--transition-speed) ease, 
-    transform var(--transition-speed) ease;
-}
-
-.ciphertext-container.shown {
-  visibility: visible;
-  transform: scaleY(1);
+  position: relative;
+  z-index: 10;
 }
 
 .text-title {
-  font-size: 1.8rem;
-  margin-top: 0;
-  color: var(--white);
+  font-size: 1.75rem;
+  background: var(--input-output-card-backgroud);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-block: 0 1rem;
 }
 
 .plaintext-word {
   font-family: 'Noto Sans KR', sans-serif;
   font-size: var(--text-md);
   border: transparent;
-  padding: 1rem;
+  padding: 0.75rem;
   text-transform: uppercase;
-  border-bottom: 0.2rem solid var(--near-black);
-  border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+  border-bottom: 2px solid var(--near-black);
   outline: 0.1rem solid transparent;
-  transition: background-color var(--transition-speed) ease;
   background-color: var(--white);
-}
+  color: var(--near-black);
 
-.plaintext-word:disabled {
-  background-color: transparent;
+  &:disabled {
+    background-color: #e8e8e8;
+    cursor: not-allowed;
+    color: #373737;
+  }
 }
 
 .plaintext-word:focus {
@@ -209,7 +209,7 @@ span {
 .cipher-selection-value {
   font-size: var(--text-xl);
   margin: 0;
-  transition: color 0.2s ease;
+  transition: color var(--transition-speed) ease;
   color: currentColor;
 }
 
@@ -224,14 +224,12 @@ span {
 }
 
 .ciphertext-word {
+  font-size: var(--text-md);
+  text-align: left;
   min-height: 3.8rem;
-  border-bottom: 0.2rem solid var(--near-black);
-  transition: border-color 0.2s ease;
   letter-spacing: 0.1rem;
-}
-
-.ciphertext-word.encoded {
-  color: #46ffda;
+  padding-inline-start: 0.75rem;
+  color: var(--near-black);
 }
 
 @media (min-width: 48rem) {
