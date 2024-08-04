@@ -100,6 +100,13 @@ span {
   gap: 3rem;
 }
 
+.letters-container {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding-block-start: 1rem;
+}
+
 .cipher-selection-container {
   font-size: var(--text-md);
   margin-block-end: 2rem;
