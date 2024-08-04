@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const normalAlphabet = document.querySelector(".normal-letters");
+  const normalAlphabet = document.querySelector('.standard-letters');
   const standardLetters = generateNormalAlphabet();
   const standardLetterseLength = standardLetters.length;
   const ciphertextContainer = document.querySelector(".ciphertext-container");
