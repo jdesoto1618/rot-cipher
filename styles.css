@@ -1,5 +1,5 @@
 :root {
-  --card-border-radius: 1rem;
+  --card-border-radius: 0.5rem;
   --card-box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
   --white: #fff;
   --black: #000;
@@ -40,7 +40,6 @@ html, body {
 
 h1 {
   font-size: var(--text-xl);
-  border-block-end: 0.1rem solid #d3d3d3;
 }
 
 h3 {
@@ -89,6 +88,7 @@ span {
 .page-heading {
   margin: 0;
   padding-block-end: 2rem;
+  border-block-end: 0.1rem solid #222;
 }
 
 .container {
