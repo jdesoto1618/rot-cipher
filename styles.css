@@ -38,7 +38,7 @@ html, body {
 
 h1 {
   font-size: var(--text-xl);
-  border-bottom: 0.1rem solid #d3d3d3;
+  border-block-end: 0.1rem solid #d3d3d3;
 }
 
 h3 {
@@ -159,13 +159,13 @@ span {
 
   &::before {
     inset: 0;
-    background: var(--input-output-card-backgroud);
+    background-color: var(--input-output-card-backgroud);
     z-index: -1;
   }
 
   &::after {
     inset: 2px;
-    background: var(--white);
+    background-color: var(--white);
   }
 }
 
